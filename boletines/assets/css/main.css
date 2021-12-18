@@ -127,7 +127,7 @@ a:hover{
 .main-image{
     float: left;
     margin-right: 1em;
-    widht: 300px;
+    width: 300px;
     height:250px;
 }
 td{
@@ -149,7 +149,7 @@ th{
     }
     td{
         display:table-cell;
-        widht:auto;
+        width:auto;
     }
     td:nth-of-type(1){
         font-size: 1em;

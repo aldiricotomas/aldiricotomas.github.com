@@ -1,0 +1,148 @@
+/* ETIQUETAS*/
+body{
+    font-size:100%;
+    margin: 0;
+    background-color: #eee;
+    
+}
+
+/* Clases */
+.container{
+    position: fixed;
+    background: no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-image: url("/assets/images/back.jpg");
+    background-size: fixed;
+    width: 100%;
+    height: 100%;
+    overflow:scroll;
+}
+/* CLASES DEL POPUP*/
+.popup{
+    display:block;
+    position:fixed;
+    padding-top: 5%;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    
+    z-index: 1;
+    background-color:rgba(0,0,0,.8);
+}
+.popup_content{
+    position: relative;
+    max-width:500px;
+    max-height: 500px;
+    padding:10px;
+    height: auto;
+    width: auto;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #070101;  /*Para exploradores que no sorporten*/
+    background-image: linear-gradient(to bottom right, #222222, black);
+    animation: zoom 0.5s;
+}
+.img_popup{
+    max-width: 500px;
+    max-height: 370px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    width: 100%;
+}
+.space{
+    height: 300px;
+}
+.formulario{
+    margin-top:4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mail{
+    border:none;
+}
+button.mail{
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    border-radius:8px;
+    background-color: yellow;
+    font-weight: 400;
+    font-size:1.3em;
+}
+input.mail{
+    text-align: left;
+    padding:14px 5px 14px 5px;
+    border-radius:4px;
+    text-indent: 1.4em;
+}
+.cerrar{
+    position: absolute;
+    top:15px; left:93%;
+    width: 20px; height: 20px;
+    background-color: white;
+    color:orange;
+    cursor:pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nostock_message{
+    text-align: center;
+    color:white;
+}
+h3.nostock_message{
+    font-weight:bold;
+}
+p.nostock_message{
+    font-size:1.2em;
+    font-weight:300;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.9);
+}
+/*Fin de las clases de popup*/
+
+.font{
+    font-family: 'Roboto', sans-serif;
+}
+/*KEY FRAMES*/
+@keyframes zoom {
+    from{transform: scale(0);};
+    to{transform: scale(1);}
+}
+
+
+/*Adaptando a pantallas pequeñas*/
+@media screen and (max-width: 480px){/*IPHONE 4 */
+    .popup_content{
+        width: 85%;
+        height: 70%;
+    }
+    p.nostock_message{
+        font-size: 14px;
+        font-weight:200;
+        text-shadow: 2px 2px 2px rgba(0,0,0,.9);
+    }
+}
+
+@media screen and (min-width:481px) and (max-width:760px){/*phablets o tablets*/
+    .popup_content{
+        width: 70%;
+        height: 70%;
+    }
+
+    p.nostock_message{
+        font-size: 14px;
+        font-weight:200;
+        text-shadow: 2px 2px 2px rgba(0,0,0,.9);
+    }
+}
+
+@media screen and (min-width: 761px){/*Dispositivos con pantalla amplia*/
+
+}
