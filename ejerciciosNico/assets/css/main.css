@@ -134,10 +134,7 @@ p.nostock_message{
 }
 
 @media screen and (min-width:481px) and (max-width:760px){/*phablets o tablets*/
-    .cerrar{
-        position: absolute;
-        left: 90%;
-    }
+
     .popup_content{
         width: 70%;
         height: auto;
