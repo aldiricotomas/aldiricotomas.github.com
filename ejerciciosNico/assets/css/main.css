@@ -83,7 +83,7 @@ input.mail{
 }
 .cerrar{
     position: absolute;
-    top:15px; left:93%;
+    top:15px; left:92%;
     width: 20px; height: 20px;
     background-color: white;
     color:orange;
@@ -134,6 +134,9 @@ p.nostock_message{
 }
 
 @media screen and (min-width:481px) and (max-width:760px){/*phablets o tablets*/
+    .cerrar{
+        left: 90%;
+    }
     .popup_content{
         width: 70%;
         height: auto;
