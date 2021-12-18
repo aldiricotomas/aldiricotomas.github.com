@@ -41,8 +41,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #070101;  /*Para exploradores que no sorporten*/
-    background-image: linear-gradient(to bottom right, #222222, black);
+    background-color:  red/* #070101 */;  /*Para exploradores que no sorporten*/
+    /* background-image: linear-gradient(to bottom right, #222222, black); */
     animation: zoom 0.5s;
 }
 .img_popup{
@@ -101,7 +101,7 @@ h3.nostock_message{
     font-weight:bold;
 }
 p.nostock_message{
-    font-size:1.2em;
+    font-size:1.2rem;
     font-weight:300;
     text-shadow: 2px 2px 2px rgba(0,0,0,.9);
 }
@@ -121,10 +121,13 @@ p.nostock_message{
 @media screen and (max-width: 480px){/*IPHONE 4 */
     .popup_content{
         width: 85%;
-        height: 70%;
+        height: auto;
+    }
+    h3.nostock_message{
+        font-size: auto;
     }
     p.nostock_message{
-        font-size: 14px;
+        font-size: 12px;
         font-weight:200;
         text-shadow: 2px 2px 2px rgba(0,0,0,.9);
     }
@@ -133,16 +136,38 @@ p.nostock_message{
 @media screen and (min-width:481px) and (max-width:760px){/*phablets o tablets*/
     .popup_content{
         width: 70%;
-        height: 70%;
+        height: auto;
     }
-
-    p.nostock_message{
+    input.mail{
+        padding: 2% 1% 2% 1%;
+    }
+    button.mail{
+        padding: 2% 1% 2% 1%;
+    }
+    h3.nostock_message{
         font-size: 14px;
-        font-weight:200;
         text-shadow: 2px 2px 2px rgba(0,0,0,.9);
+    }
+    h3.nostock_message{
+        font-weight: bold;
+    }
+    p.nostock_message{
+        font-weight:200;
+        font-size:16px;
     }
 }
 
 @media screen and (min-width: 761px){/*Dispositivos con pantalla amplia*/
-
+    .popup_content{
+        max-width:500px;
+        max-height: 500px;
+        height: auto;
+    }
+    p.nostock_message{
+        font-size: 18px;
+        background-color: red;
+    }
+    h3.nostock_message{
+        margin-bottom: -3px;
+    }
 }
