@@ -1,7 +1,6 @@
 (function(){
 
     let productos = document.querySelectorAll('.product');
-    console.log(productos);
     productos.forEach(function(producto){
         producto.addEventListener("mouseover",function(ev){
             ev.preventDefault();
@@ -10,10 +9,7 @@
             producto.classList.add("animation-product-in");
 
             producto.classList.add("shadow");
-         /*    setTimeout(function(){
-                
-            },1000); */
-            
+
         });
 
         producto.addEventListener("mouseout",function(ev){
@@ -22,11 +18,7 @@
             producto.classList.remove("animation-product-in");
 
             producto.classList.add("animation-product-out")
-            
-            setTimeout(function(){
-                producto.classList.remove("shadow");
-            },0);
-            
+            producto.classList.remove("shadow");    
         });
     })
     /* producto.addEventListener("mouseover",function(){
