@@ -1,0 +1,123 @@
+body{
+    padding: 0;
+    margin:0;
+    background-color: #eee;
+    font-family: Roboto, Helvetica, Arial;
+    height: 100vh;
+}
+.popup{
+    height: 100%;width: 100%;
+    position:relative;
+    display:flex;
+    justify-content: flex-start;align-items: flex-end;
+}
+.popup-content{
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display:flex;
+    flex-direction: row;
+    padding-left:3%;padding-right: 3%;
+    margin: 0 0 1% 1%;
+    max-width: 430px;
+    max-height: 309px;    
+}
+.img-popup{
+   width: 50%;
+   height: 100%;
+   background-color: white;
+   display: flex;
+   justify-content: center;align-items:center;
+}
+.img-popup img{
+    position: relative; 
+    width:80%;
+    height:auto;
+}
+.img-cont{
+    width:80%;
+    height:auto;
+}
+.price{
+    position: absolute;
+    z-index: 1;
+    top:1%;left:1%;
+    height: 10%;width: 20%;
+    text-align: center;
+    padding-top:2.5%;
+    background-color: wheat;
+    font-size: 1rem;
+}
+
+.desc-popup{
+    width: 50%;
+    height: 100%;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+    white-space:pre-line;
+}
+.desc-popup span{
+    font-size: 1rem;
+}
+.desc-popup h4{
+    color:tomato;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.desc-popup span{
+    font-size: 1rem;
+}
+.btn-compra{
+    position: absolute;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    font-size:1rem;
+    box-shadow: 0px 0px 2px 0px  rgba(0,0,0,.9);
+    color:white;
+    text-shadow:0px 0px 5px rgba(0,0,0,.5); 
+    top: 70%;
+    height: 15%;
+    width: 40%;
+}
+
+
+@media screen and (max-width:481px){
+    .popup-content{
+        max-width: 450px;
+        max-height: 230px;
+    }
+    .desc-popup span{
+        font-size: .9rem;
+    }
+    .desc-popup h4{
+        color:tomato;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .price{
+        font-size:.9rem;
+    }
+}
+
+
+@media screen and (min-width:482px) and (max-width:760px){
+    .popup-content{
+        max-width: 460px;
+        max-height: 250px;
+    }
+    .desc-popup span{
+        font-size: .9rem;
+    }
+    .desc-popup h4{
+        color:tomato;
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+    .price{
+        font-size:1rem;
+    }
+
+}

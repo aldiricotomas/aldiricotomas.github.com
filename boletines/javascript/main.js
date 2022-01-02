@@ -24,8 +24,8 @@ links.forEach(function(link){
 
         //Agregamos una funcion de intervalo (1000 = 1 segundo)
         setTimeout(function(){
-            location.href = "/boletines";
-        },1000);
+            location.href = "/";
+        },0);
     }); 
 });
 

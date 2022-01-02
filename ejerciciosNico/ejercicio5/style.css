@@ -1,0 +1,245 @@
+body{
+    font-size:100%;
+/*     background-image: url("./fondoxiaomi.jpg");
+    background-size:cover;
+    background-repeat: no-repeat; */
+    margin: 0;
+    background-color: #eee;
+    font-family: Roboto, Helvetica, Arial;
+}
+
+/* Modificador del contenedor del popup*/
+.showed{
+    display:block;
+}
+.hidden{
+    display:none;
+}
+.popup{/* 
+    display:block; */
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: 1;
+    background-color:rgba(255,255,255,.4);
+}
+.popup-content{
+    position: absolute;
+    overflow:scroll;
+    overflow-x: hidden;
+    background-color: #F96604;
+    width: 40%;
+    height: 100%;
+    box-shadow: -3px 0px 16px 0px rgba(0,0,0,.8);
+    animation-name: rightentry;
+    animation-duration: 2s;
+    right: 0;
+}
+.op-cl-popup{
+    position:absolute;
+    font-size:1.7rem;
+    padding:2px 3px 2px 3px;
+    background-color:rgba(0,0,0,.1);
+    color:grey;
+    left: 0%;
+    cursor:pointer;
+    z-index: 10;
+    border-radius: 5px;
+}
+/*Imagen superior del popup*/
+.img-popup-container{
+    max-height: 280px;/* 
+    margin-bottom:50px; */
+}
+.img-popup{
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/*Formulario*/
+.form-dont-leave{
+    width: 100%;
+    max-height: 272px;
+    height: 100%;
+    background-color:#F96604;
+    padding: 5% 0 5% 0;
+    text-align: center;
+}
+
+.form-dont-leave div{
+    position: relative;
+    color:white;
+    margin: 6% 0 10px 0;
+}
+.form-dont-leave span{
+    font-size:2em;
+    font-weight: bold;
+}
+.form-dont-leave p{
+    font-size:19px;
+    font-weight: bold;
+}
+
+.f-mail{
+    position: relative;
+    width: 75%;
+    max-height: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+}
+.f-mail input{
+    text-indent: 5%;
+    height:45%;
+    margin-bottom: 1px;
+    border:none;
+    font-size:16px;
+}
+
+.f-mail button{
+    border:none;
+    position: relative;
+    height: 50%;
+    margin-top: 1%;
+    font-size: 1.5rem;
+    color: #F96604;
+}
+
+/*Recomemdaciones*/
+.recommendations{
+    background-color: white;
+}
+.recommendations header{
+    text-align: center;
+    padding: 1%;
+    font-weight: bold;
+    font-size:.9rem;
+    border-bottom:solid 1px rgba(0,0,0,.8);
+}
+.phone{
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 0.5px rgba(0,0,0,.3);
+}
+.phone div img{
+    width:140px ;
+    height:140px;
+}
+.phone .show{
+    text-decoration: none;
+    position: relative; 
+    background-color: #F96604;
+    padding: 1% 3% 1% 3%;
+    margin-right: 4%;
+    color:white;
+    font-weight: 100;
+}
+
+.desc{
+    display:flex;
+    flex-direction: column;
+}
+.desc .phone-name{
+    font-size:1rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    white-space: pre-line;
+}
+.desc .phone-price{
+    color: #F96604;
+}
+
+
+@media screen and (max-width: 480px){
+    .popup-content{
+        width: 90%;
+    }
+    .form-dont-leave{
+        height: auto;
+    }
+    .op-cl-popup{
+        right: 90%;
+    }
+    .f-mail button{
+        font-size:1.0rem;
+    }
+}
+
+@media screen and (min-width:481px) and (max-width:760px){
+    .popup-content{
+        width: 60%;
+        height: 100%;
+    }
+    .op-cl-popup{
+        right: 60%;
+    }   
+    .form-dont-leave{
+        max-height: 180px;
+        height: auto;
+    }
+    .form-dont-leave span{
+        font-size: 1.3em;
+    }
+    .form-dont-leave p{
+        font-size: 0.8em;
+    }
+    .phone .desc .phone-name{
+        font-size:0.9rem;
+    }
+    .phone .show{
+        font-size: 0.7rem;
+    }   
+    .f-mail{
+        max-height: 70px;
+    }
+    .f-mail input{
+        font-size: 12px;
+    }
+    .f-mail button{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 761px) and (max-width: 1024px){
+    .popup-content{
+        width: 45%;
+    }
+    .form-dont-leave{
+        max-height: 200px;
+        margin: auto;
+    }
+    .form-dont-leave span{
+        font-size: 1.5em;
+    }
+    .form-dont-leave p{
+        font-size: .8em;
+    }
+    .f-mail{
+        max-height: 70px;
+    }
+    .f-mail input{
+        font-size: 13px;
+    }
+    .f-mail button{
+        font-size: 1.3rem;
+    }
+    .phone .desc .phone-name{
+        font-size:0.8rem;
+    }
+    .phone .show{
+        font-size: 0.9rem;
+    }
+}
+
+.space{
+    height: 500px;
+}
+

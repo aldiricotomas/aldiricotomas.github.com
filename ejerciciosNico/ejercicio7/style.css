@@ -1,0 +1,107 @@
+body{
+    font-size: 100%;
+    font-family: Helvetica, Arial;
+    height: 100vh;
+    margin: 0;
+    padding: 0 3% 0 3%;
+    background-color: #eee;
+}
+
+.container{
+    position: relative;
+    margin-top: 10%;
+    max-height: 500px;
+    height: 100%;
+    width: 100%;
+    background-color: #eee;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    width: 95%;
+    height: 70%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+    margin-left: auto; margin-right: auto;
+    
+}
+.product{
+    margin-top: 1%;
+    display: block; 
+    position: relative;
+    width: 15%;
+    height:70%;
+    padding:2% 4% 2% 4%;
+    background-color: white;
+    cursor:pointer;
+}
+.shadow{
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1), 0px 6px 8px 4px rgba(0,0,0,0.8);
+}
+.animation-product-in{
+    animation-name: zom;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+.animation-product-out{
+    animation-name: zomOut;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+.product-img{
+    position: relative;
+    max-width: 200px;
+    max-height: 200px;
+    width: 100%;  
+}
+.product-name{
+    position: relative;
+    font-size: 11px;
+    color:grey;
+}
+.product-price{
+    position: absolute;
+    color:#F96604;
+    bottom: 0;
+    right: 45%;
+}
+.container h1{
+    display: block;
+    position: relative;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: grey;
+}
+
+.container h1::after, .container h1::before{
+    content: '';
+    position: absolute; 
+    width:30%;
+    height: 2px;
+    background-color: currentColor;
+    top: .6em;
+}
+
+.container h1::before{
+    left: 3%;
+}
+.container h1::after{
+    right: 3%;
+}
+
+@keyframes productHover {
+    
+}
+@keyframes zom{
+    0%{box-shadow: none;}
+    100%{box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.1), 0px 6px 8px 4px rgba(0,0,0,0.8)}
+}
+@keyframes zomOut {
+    0%{box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.1), 0px 6px 8px 4px rgba(0,0,0,0.8)}
+    100%{box-shadow: none;}
+}

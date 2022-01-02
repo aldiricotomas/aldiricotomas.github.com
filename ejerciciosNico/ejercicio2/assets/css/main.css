@@ -1,0 +1,129 @@
+body{
+    font-size:100%;
+    margin: 0;
+    background-color: #eee;
+}
+.popup{
+    display:block;
+    position:fixed;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: 1;
+    background-color:rgba(0,0,0,.8)
+}
+.popup_content{
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 350px;
+    max-height: 500px;
+    height: auto;
+    width: 80%;
+    padding: 2% 2% 2% 2%;
+    background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.img_popup{
+    max-width: 330px;
+    max-height: 140px;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    background: no-repeat center center fixed;
+}
+.img_text{
+    margin: 0;
+    text-align: center;
+}
+h3.img_text{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+p.img_text{
+    margin-top: 0.5em;
+    border-radius: 40%;
+    background: -webkit-linear-gradient(to left, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url("/assets/images/paisaje.jpg");
+}
+.xiaomi_form{
+    margin-top: 1%;
+}
+p#sexo-select{
+    margin-bottom: 1%;
+}
+.mail{
+    width: 100%;
+    margin-top: 1%;
+    padding: 3% 0 3% 0;
+    text-indent: 1.4em;
+    border-radius: 4px;
+    
+}
+.cumpleaños{
+    padding-top: 2%;
+}
+button.btn_xiaomi{
+    text-align: center;
+    width: 100%;
+    padding: 3% 2% 3% 2%;
+    margin-top: 4%;
+    border-radius: 6px;
+    background: -webkit-linear-gradient(to left, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    cursor:pointer;
+}
+.borders{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+}
+.left{
+    position: absolute;
+    display:flex;
+    height: 30px;
+    width: 10px;
+    background-color: #6FB1FC;
+    border-radius: 50%;
+}
+.right{
+    position:relative;
+    display:flex;
+    height: 30px;
+    width: 10px;
+    background-color: /* #0052D4 */ red;
+    border-radius: 50%;
+}
+.cerrar{
+    position: absolute;
+    top:1%; left:92%;
+    width: 20px; height: 20px;
+    background-color: white;
+    color:orange;
+    cursor:pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+@media screen and (min-width: 761px){
+    .cerrar{
+        top:2%;
+    }
+}
