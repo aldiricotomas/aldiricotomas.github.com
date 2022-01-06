@@ -1,0 +1,126 @@
+/*ICONO HAMBURGUESA*/
+
+:root{
+    --duration: .5s;
+    --size: 100%;
+  }
+  
+  .navicon-button {
+    display: inline-block;
+    position: relative;
+    padding: 1rem .5rem;
+    transition: 0.25s;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.8;
+    margin-bottom: -.6em;
+  }
+  
+  .navicon-button .navicon::before, .navicon-button .navicon::after{
+    transition: 0.25s;
+  } 
+  
+  .navicon-button:hover{
+    transition: 0.5s;
+    opacity: 1;
+  }
+  
+  .navicon-button:hover .navicon::before, .navicon-button:hover .navicon::after{
+    transition: 0.25s;
+  }
+  
+  .navicon-button:hover .navicon::before{
+    top: 0.825rem;
+  }
+  
+  .navicon-button:hover .navicon::after{
+    top: -0.825rem;
+  }
+  
+  .navicon{
+    position: relative;
+    width: 2rem;
+    height: .25rem;
+    background: white;
+    transition: 0.5s;
+    border-radius: 2.5rem;
+  }
+  
+  .navicon::before, .navicon::after{
+    display: block;
+          content: "";
+          height: 0.3125rem;
+          width: 2rem;
+      background: white;
+          position: absolute;
+          z-index: -1;
+          transition: 0.5s 0.25s;
+          border-radius: 1rem;
+  }
+  
+  .navicon::before{
+    top: 0.625rem;
+  }
+  
+  .navicon::after{
+    top: -0.625rem;
+  }
+  
+  .open:not(.steps) .navicon:before, .open:not(.steps) .navicon:after{
+      top: 0 !important;
+  }
+  
+  .open .navicon:before, .open .navicon:after {
+      transition: 0.5s;
+  }
+  
+  /* Minus */
+  .open {
+      transform: scale(0.75);
+  }
+  
+  /* Arrows */
+  .open.left-arrow .navicon::before, .open.left-arrow .navicon::after {
+    width: 1.5rem;
+  }
+  
+  .open.left-arrow .navicon::before{
+    transform: rotate(35deg);
+    transform-origin: left top;
+  }
+  
+  .open.left-arrow .navicon::after{
+    transform: rotate(-35deg);
+    transform-origin: left bottom;
+  }
+ 
+
+  
+  /* Base ================== */
+  * { box-sizing: border-box; }
+  
+  html { font-size: var(--size); }
+  html, body, section { position: relative; height: 100%; }
+ /*  
+  body {
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+  
+
+  
+/*   nav{
+    display: flex;
+    justify-content: space-between;
+    height: 4.5rem;
+    background: black;
+    border-radius: .5rem .5rem 0 0;
+    padding: 0 1rem;
+  }
+   */
+  .content *, .content *:before, .content *:after {
+    transform: translate3d(0, 0, 0);
+  }
+  
