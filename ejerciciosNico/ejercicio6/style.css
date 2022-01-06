@@ -32,32 +32,43 @@ body{
     position: relative;
     font-weight: 100;
     margin-top: -1.5%;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 .popup-content h5{
     position: relative;
     font-weight: bold;
     margin-top:-2px;
+    margin-right: 5%;
+    margin-left:5%;
 }
 .popup-content .bottom{
     position: relative;
     font-weight: 100;
     font-size:0.6rem;
-    
+    margin-right: 5%;
+    margin-left: 5%;
     margin-top:-2px;
 }
 .op-cl-popup{
     position: absolute;
     right: 2%;
-    top:5%;
+    margin-top:0;
+    top:6%;
     cursor:pointer;
 }
 
 
 @media screen and (min-width: 481px) and (max-width: 761px){
     .popup-content{
+        max-height: 110px;
         padding-top:4%;
         padding-bottom: 4%; 
-        height: 15%;
+        height: 50%;
+    }
+    .op-cl-popup{
+        top:11%;
+        margin-top: 0;
     }
 }
 
