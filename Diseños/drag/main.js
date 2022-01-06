@@ -7,8 +7,32 @@ class DOMHelper{
     static isOver(el, pointercoords){
         let elCoords = el.getBoundingClientRect();
 
-        if(pointercoords.x > elCoords.left && pointercoords.x <(elCoords.left + elCoords.width));
+        if(pointercoords.x > elCoords.left && pointercoords.x <(elCoords.left + elCoords.width))
+        {
+            if(pointercoords.y > elCoords.top && pointercoords.y <(elCoords.top + elCoords.height)){
+               return true;
+            }
+        }
+
+        return false;
     }
+
+    static whereIs(el,pointercoords){
+        let elCoords = el.getBoundingClientRect();
+
+        if(pointercoords.x > elCoords.left && pointercoords.x <(elCoords.left + elCoords.width))
+        {
+            if(pointercoords.y > elCoords.top && pointercoords.y <(elCoords.top + elCoords.height)){
+               if(pointercoords.y > elCoords.top + (elCoords.height / 2 )){
+                   return 1;
+               }
+               return 2;
+            }
+        }
+
+        return -1;   
+    }
+
 }
 class DragList{
     constructor(list_selector,items_selector="li"){
@@ -17,6 +41,8 @@ class DragList{
         this.handleDragStart =this.handleDragStart.bind(this);
         this.handleDrag = this.handleDrag.bind(this);
         this.handleDragEnd = this.handleDragEnd.bind(this);
+        this.finalPosition = -1;
+        this.finalElementHover = null;
 
         this.canvas = document.createElement("canvas");
 
@@ -44,13 +70,46 @@ class DragList{
         el.classList.add("dragging");
     }
     handleDrag(ev){
-        DOMHelper.move(ev.currentTarget,{x : ev.clientX, y: ev.clientY});
+        let mousecoords = {x : ev.clientX, y: ev.clientY}
+        DOMHelper.move(ev.currentTarget, mousecoords);
+
+        if(DOMHelper.isOver(this.list,mousecoords)){
+            this.items.forEach(item => this.compareElement(item,ev));
+        }else{
+            this.fakeElement.remove();
+        }
+
+        
+    }
+
+    compareElement(item,ev){
+        if(item == ev.currentTarget)return;
+        let mousecoords = {x : ev.clientX, y: ev.clientY}
+
+        let result = DOMHelper.whereIs(item, mousecoords)
+        if(result==-1)return;
+
+        this.finalPosition = result;
+        this.finalElementHover = item;
+
+        if(result==1)
+            this.list.insertBefore(this.fakeElement,item.nextSibling);
+
+        if(result==2)
+            this.list.insertBefore(this.fakeElement,item);
     }
     handleDragEnd(ev){
         let el = ev.currentTarget;
+        el.classList.remove("dragging");
         el.style.top = "";
         el.style.left = "";
-        el.classList.remove("dragging");
+        
+
+        if(this.finalPosition==1)
+            this.list.insertBefore(el,this.finalElementHover.nextSibling);
+
+        if(this.finalPosition==2)
+            this.list.insertBefore(el,this.finalElementHover);
     }
 }
 
