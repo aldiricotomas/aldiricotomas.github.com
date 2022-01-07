@@ -130,6 +130,7 @@ body{
     white-space: nowrap;
     box-sizing: border-box;
     padding: 1%;
+    background-color: blue;
 }
 
 .slider-cont *{
@@ -141,6 +142,7 @@ body{
     width: 100%;
     height: auto;
     left:0px;
+    transition: all 1s;
 }
 
 /*SLIDER DERECHA A IZQUIERDA*/

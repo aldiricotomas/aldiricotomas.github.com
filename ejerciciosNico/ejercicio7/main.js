@@ -65,10 +65,10 @@ class Slider{
         let left = index * 100;
         this.resetIndicator();
         document.querySelector(".controls li:nth-child("+(index+1)+")").classList.add("active");  
-        this.slider.querySelectorAll(".slider-cont .product").forEach(function(cont){
+        this.slider.querySelectorAll(".slider-cont").forEach(function(cont){
             if(index==0){
                 cont.style.left = "-"+(left)+"%";
-            }else if(index==1){
+            }else{
                 cont.style.left = "-"+(left+1.4)+"%";
             }
         })
