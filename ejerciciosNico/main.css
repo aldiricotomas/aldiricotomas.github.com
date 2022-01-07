@@ -1,6 +1,4 @@
 body{
-    height: 100vh;
-    margin:0;
     background-color: #fff;
     font-family: Roboto, Helvetica, Arial;
     font-size: 100%;
@@ -12,30 +10,45 @@ a:visited{
     color: white;
 }
 .container{
-    color:white;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    position: relative;
     height: 100%;
-    background-color: rgba(0,0,0,.9);
-    z-index: 1;
+    width: 100%;
+    padding: 2em;
+    font-size: 1em;
+    box-sizing: border-box;
 }
 .content{
     position: relative;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 95%;
-    height: auto;/* 
-    margin: 0 1em 3em 1em; */
-    font-size: 1em;
+    width: 74.4%;
+    height: auto;
+    margin: auto;
 }
-.img{
-    width: auto;
-    margin-bottom: 3%;
+.card{
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    padding: 7px;
+    border-radius: 2px;
+    height: 300px;
+    width: 500px; 
+    box-shadow: 0px 2px 5px rgba(0,0,0,.16), 0px 2px 10px rgba(0,0,0,.12);
+    box-sizing: border-box;
+    margin: 1em;
+    cursor:pointer;
+    
+}
+.shadow{
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.1), 0px 6px 8px 4px rgba(0,0,0,0.8);
+}
+.animation-product-in{
+    animation-name: zom;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+.animation-product-out{
+    animation-name: zomOut;
+    animation-duration: 1s;
+    animation-delay: 0s;
 }
 .img:hover{
     background-color: #eee;
@@ -43,7 +56,34 @@ a:visited{
     border-radius: 5px;
     padding: 10px 0 10px 0;
 }
+.card .tittle{
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    font-size: 1.5rem;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    left: 0; top:.5em;
+    text-shadow: 0px 0px 3px #fff;
+}
+.card .card-bg img{
+    width: 100%;
+    height: 100%;
+}
+.card .card-bg{
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
 
-
+@keyframes zom{
+    0%{box-shadow: none;}
+    100%{box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.1), 0px 6px 8px 4px rgba(0,0,0,0.8)}
+}
+@keyframes zomOut {
+    0%{box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.1), 0px 6px 8px 4px rgba(0,0,0,0.8)}
+    100%{box-shadow: none;}
+}
 
 

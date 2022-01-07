@@ -19,6 +19,9 @@
         setTimeout(function(){
             popup.classList.add('hidden');
         },1000);
+        setTimeout(function(){
+            location.href ="/";
+        },1000);
         
     });
 }());

@@ -23,7 +23,9 @@ class Slider{
         this.itemsCount = this.slider.querySelectorAll(".slider-cont > *").length;
         this.movimiento = movimiento;
         this.start();   
+        
         this.buildControls();
+
         this.bindEvents();
     }
 
@@ -45,7 +47,7 @@ class Slider{
     }
 
     moveByButton(ev){
-        let index = IndexForSiblings.get(ev.currentTarget);
+        let index = IndexForSiblings.get(ev.currentTarget);;
         this.contador=index;
         this.moveTo(index);
         this.restart();
@@ -63,8 +65,12 @@ class Slider{
         let left = index * 100;
         this.resetIndicator();
         document.querySelector(".controls li:nth-child("+(index+1)+")").classList.add("active");  
-        this.slider.querySelectorAll(".slider-cont").forEach(function(cont){
-            cont.style.left = "-"+(left+0.5)+"%";
+        this.slider.querySelectorAll(".slider-cont .product").forEach(function(cont){
+            if(index==0){
+                cont.style.left = "-"+(left)+"%";
+            }else if(index==1){
+                cont.style.left = "-"+(left+1.4)+"%";
+            }
         })
     }
     resetIndicator(){
@@ -74,52 +80,118 @@ class Slider{
 
 
     buildControls(){
-        for(let i=0;i < (this.itemsCount/4);i++){
-            let control = document.createElement("li");
-            if(i==0) control.classList.add("active");
-            document.querySelector(".controls ul").appendChild(control);
-        }
-        /* let tamaño = window.screen.width;
-        console.log(tamaño);
-        if(tamaño>1024){
-            for(let i=0;i < (this.itemsCount/4);i++){
-                let control = document.createElement("li");
-                if(i==0) control.classList.add("active");
-                document.querySelector(".controls ul").appendChild(control);
+        let c = 0;
+        let tamaño = window.screen.width;
+        let cant = 0;
+        if(tamaño>1151){
+            cant = this.itemsCount/4;
+            if(c==0){
+                for(let i=0;i < cant;i++){
+                    let control = document.createElement("li");
+                    if(i==0) control.classList.add("active");
+                    document.querySelector(".controls ul").appendChild(control);
+                }
             }
+            
+            c++;
         }
-        else if(tamaño>750){
-            for(let i=0;i < (this.itemsCount/3);i++){
-                console.log(this.itemsCount/3);
-                let control = document.createElement("li");
-                if(i==0) control.classList.add("active");
-                document.querySelector(".controls ul").appendChild(control);
+        else if(tamaño > 751){
+            cant = this.itemsCount/3;
+            if(c==0){
+                for(let i=0;i < cant;i++){
+                    let control = document.createElement("li");
+                    if(i==0) control.classList.add("active");
+                    document.querySelector(".controls ul").appendChild(control);
+                }
             }
+            c++;
         }
-        else if(tamaño>500){
-            for(let i=0;i < (this.itemsCount/2);i++){
-                let control = document.createElement("li");
-                if(i==0) control.classList.add("active");
-                document.querySelector(".controls ul").appendChild(control);
+        else if(tamaño > 501){
+            cant = this.itemsCount/2;
+            if(c==0){
+                for(let i=0;i < cant;i++){
+                    let control = document.createElement("li");
+                    if(i==0) control.classList.add("active");
+                    document.querySelector(".controls ul").appendChild(control);
+                }
             }
+            c++;
         }
         else{
-            for(let i=0;i < (this.itemsCount);i++){
-                let control = document.createElement("li");
-                if(i==0) control.classList.add("active");
-                document.querySelector(".controls ul").appendChild(control);
+            cant = this.itemsCount/1;
+            if(c==0){
+                for(let i=0;i < cant;i++){
+                    let control = document.createElement("li");
+                    if(i==0) control.classList.add("active");
+                    document.querySelector(".controls ul").appendChild(control);
+                }
             }
-        } */
+            c++;
+        }        
     }
 }
 
 
 (function(){
     new Slider(".slider",false);
+    window.addEventListener("resize", updateControls(),true);
     shadows();
 }());
 
-    
+function updateControls(){
+    let c = 0;
+    let tamaño = window.screen.width;
+    let cant = 0;
+    let itemsCount = Slider.itemsCount;
+    console.log(tamaño);
+    if(tamaño>1151){
+        cant = itemsCount/4;
+        if(c==0){
+            for(let i=0;i < cant;i++){
+                let control = document.createElement("li");
+                if(i==0) control.classList.add("active");
+                document.querySelector(".controls ul").appendChild(control);
+            }
+        }
+        
+        c++;
+    }
+    else if(tamaño > 751){
+        cant = itemsCount/3;
+        if(c==0){
+            for(let i=0;i < cant;i++){
+                let control = document.createElement("li");
+                if(i==0) control.classList.add("active");
+                document.querySelector(".controls ul").appendChild(control);
+            }
+        }
+        c++;
+    }
+    else if(tamaño > 501){
+        cant = itemsCount/2;
+        if(c==0){
+            for(let i=0;i < cant;i++){
+                let control = document.createElement("li");
+                if(i==0) control.classList.add("active");
+                document.querySelector(".controls ul").appendChild(control);
+            }
+        }
+        c++;
+    }
+    else{
+        cant = itemsCount/1;
+        if(c==0){
+            for(let i=0;i < cant;i++){
+                let control = document.createElement("li");
+                if(i==0) control.classList.add("active");
+                document.querySelector(".controls ul").appendChild(control);
+            }
+        }
+        c++;
+    }        
+}
+
+
 /* function moveSlider(){
     let productos = document.querySelectorAll('.product');
     console.log
@@ -158,50 +230,3 @@ function shadows(){
         });
     })
 }
-/* function updateControls(itemsCount){
-
-    let tamaño = window.screen.width;   
-    
-    if(tamaño>1024){
-        do{
-            let c=0;
-            if(c==0){
-                for(let i=0;i < (itemsCount/4);i++){    
-                    let control = document.createElement("li");
-                    if(i==0) control.classList.add("active");
-                    document.querySelector(".controls ul").appendChild(control);
-                } 
-            }
-            c++;
-            var tamañoUpd = window.screen.width;
-        }while(tamañoUpd>1024)
-    }
-    else if(tamaño>750){
-        $('#list li').remove();
-            for(let i=0;i < (itemsCount/3);i++){
-                let control = document.createElement("li");
-                if(i==0) control.classList.add("active");
-                document.querySelector(".controls ul").appendChild(control);
-            } 
-
-    }
-    else if(tamaño>500){
-        $('#list li').remove();
-        for(let i=0;i < (itemsCount/2);i++){
-            let control = document.createElement("li");
-            if(i==0) control.classList.add("active");
-            document.querySelector(".controls ul").appendChild(control);
-        } 
-    }
-    else{
-        $('#list li').remove();
-        for(let i=0;i < (itemsCount);i++){
-            let control = document.createElement("li");
-            if(i==0) control.classList.add("active");
-            document.querySelector(".controls ul").appendChild(control);
-        } 
-    }
-}
-function removeChilds(){
-   
-} */

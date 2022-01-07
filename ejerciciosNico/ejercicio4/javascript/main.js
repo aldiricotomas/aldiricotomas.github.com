@@ -1,15 +1,12 @@
-var popup = $("#popup");
+var popup = $('#popup');
 
 $(document).ready(function(){
     showPopup();
     hidePopup();
 })
 
-
 function showPopup(){
-    popup.css("display","block");
-    $("#popup-content").addClass("animate__animated")
-    $("#popup-content").addClass("animate__zoomIn")
+    popup.css("display","flex");
 }
 function hidePopup(){
     $('.cerrar').click(function(){
@@ -19,4 +16,3 @@ function hidePopup(){
         }, 500);
     });
 }
-
