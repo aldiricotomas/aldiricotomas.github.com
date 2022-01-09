@@ -1,0 +1,27 @@
+.avatar{
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-image: url('./fotoig.jpg');
+    background-size:cover;
+    background-position: center;
+    cursor:pointer;
+    border: solid 2px white;
+}
+
+.avatar::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: red;
+    z-index: -1;
+    transform: scale(1.12);
+    background: conic-gradient(#d62976,#d62976,#fa7e1e,#d62976);/* 
+    background: conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75) */
+    
+}

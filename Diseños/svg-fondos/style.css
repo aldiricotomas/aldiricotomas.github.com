@@ -1,0 +1,14 @@
+.snowflake{
+    position: relative;
+    -webkit-mask: url('./flourish.svg') no-repeat 100% 100%;
+    background: conic-gradient(#ff4b1f,#1fddff,#ff4b1f,#1fddff,#ff4b1f);
+    /* background: #ff4b1f;   fallback for old browsers
+    background: -webkit-linear-gradient(to right top, #1fddff, #ff4b1f);  Chrome 10-25, Safari 5.1-6
+    background: linear-gradient(to right top, #1fddff, #ff4b1f); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    z-index: -1;
+}

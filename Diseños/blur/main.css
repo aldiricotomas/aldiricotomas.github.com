@@ -1,0 +1,15 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 1em;
+}
+.container:hover .option{
+    filter:blur(2px);
+}
+.container .option{
+    transition:  all .1s ease-in;
+}
+.container .option:hover{
+    filter: blur(0px);
+    transform: scale(1.1);
+}

@@ -1,0 +1,9 @@
+body{
+    height: 100vh;
+    background-color: #f2fa;
+    font-family: Roboto, Helvetica, Arial;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
