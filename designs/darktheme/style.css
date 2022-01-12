@@ -94,6 +94,7 @@ svg.moon{
 }
 .submit-form{
     width: 100%;
+    cursor:pointer;
 }
 
  
