@@ -75,9 +75,10 @@ svg.moon{
     background-color: var(--accent-color);
     transition: all 0.2s cubic-bezier(0.4,0.0,0.2,1);
 }
+
 .dark-toggle:checked + label::after{
     background-color:blue;
-    left: calc(100% - (var(--circle-size) - var(--height-control) /2) );;
+    left: calc(100% - (var(--circle-size) - var(--height-control) /2) );
 }
 .card{
     background-color: var(--main-color);

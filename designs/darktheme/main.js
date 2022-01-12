@@ -51,6 +51,10 @@ function changeToDarkMode(){
     bodyElement.classList.add("force-dark");
     setColorSchemeToLS("dark")
 }
+function setPosition(theme){
+    if(theme==='light') return 'left: calc(100% - (var(--circle-size) - var(--height-control) /2) );';
+    return 'left: calc( (var(--circle-size) - var(--height-control)) * -1 );';
+}
 function setColorSchemeToLS(value){
     try{
         window.localStorage.setItem(colorSchemeLSKey, value);
