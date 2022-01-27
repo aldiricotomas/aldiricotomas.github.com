@@ -16,15 +16,17 @@ class IndexForSiblings{
 class Slider{
     constructor(selector,movimiento=true){
         this.move = this.move.bind(this);
+        this.buildControls = this.buildControls.bind(this);
         this.moveByButton = this.moveByButton.bind(this);
         this.slider = document.querySelector(selector);
         this.interval = null;
         this.contador = 0; 
         this.itemsCount = this.slider.querySelectorAll(".slider-cont > *").length;
         this.movimiento = movimiento;
-        this.start();   
-        
+        this.start();       
         this.buildControls();
+        
+        window.addEventListener("resize",() => this.buildControls())
 
         this.bindEvents();
     }
@@ -60,7 +62,6 @@ class Slider{
         }
         this.moveTo(this.contador);
     }
-
     moveTo(index){
         let left = index * 100;
         this.resetIndicator();
@@ -135,7 +136,7 @@ class Slider{
 (function(){
     new Slider(".slider",false);
     window.addEventListener("resize", updateControls(),true);
-    shadows();
+    shadows();  
 }());
 
 function updateControls(){

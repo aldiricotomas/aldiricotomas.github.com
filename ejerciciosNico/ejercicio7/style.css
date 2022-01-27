@@ -54,24 +54,24 @@ body{
     animation-delay: 0s;
 }
 
-.product-img{
-    position: relative;
-    max-width: 200px;
-    max-height: 200px;
-    width: 100%;  
-}
-.product-name{
-    position: relative;
-    font-size: 11px;
-    color:grey;
-}
-.product-price{
-    color:#F96604;
-    position: relative;
-    width: 100%;
-    margin-bottom: -9%;
+    .product-img{
+        position: relative;
+        max-width: 200px;
+        max-height: 200px;
+        width: 100%;  
+    }
+    .product-name{
+        position: relative;
+        font-size: 11px;
+        color:grey;
+    }
+    .product-price{
+        color:#F96604;
+        position: relative;
+        width: 100%;
+        margin-bottom: -9%;
 
-}
+    }
 .container h1{
     display: block;
     position: relative;
