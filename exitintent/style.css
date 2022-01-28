@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-.disable-select{
+.disable-select {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
     -khtml-user-select: none;    /* Konqueror */
@@ -8,13 +8,14 @@
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;           /* Non-prefixed version, currently supported by any browser but < IE9 */
 }
+
 body,html{
     margin: 0;
     padding: 0;
     background-color: #eee;
     font-family: 'Roboto', Helvetica, Arial;
 }
-.datatrics-popup{
+.popup{
     position: relative;
     height: 100vh;
     display: none;
@@ -25,7 +26,7 @@ body,html{
     overflow: hidden;
 }
 
-.datatrics-popup-content{
+.popup-content{
     position: fixed;
     max-height: 400px;
     max-width: 380px;
@@ -41,18 +42,18 @@ body,html{
     box-sizing: border-box;
     color: white;
 }
-.datatrics-popup-content .datatrics-how-to-experience{
+.popup-content .how-to-experience{
     font-size: 1em;
     text-align: center;
     font-weight: bold;
 }
-.datatrics-popup-content input{
+.popup-content input{
     position: relative;
     margin-right: 2em;
     margin-bottom: 0.8em;
     font-weight: 500;
 }
-.datatrics-textarea{
+.textarea{
     margin-top: 0.5em;
     width: 98.3%;
     overflow: hidden;
@@ -62,7 +63,7 @@ body,html{
     box-shadow: 0px 1px 3px 1px rgba(163,127,28,.64);
 
 }
-.datatrics-btn-enviar{
+.btn-enviar{
     position: absolute;
     left: 21%;
     font-weight: bold;
@@ -91,7 +92,6 @@ body,html{
 input[type = radio] {
     display: none;
 }
-
 input[type=radio] + label{
     cursor: pointer;
     transition: all 3s;
@@ -120,19 +120,19 @@ input[type="radio"]:checked + label::before,label::after{
     
 }
 
-#datatricsID-dont-know-buy + label::before{
+#dont-know-buy + label::before{
     content: "😕";
 }
-#datatricsID-satisfactory + label::before{
+#satisfactory + label::before{
     content: "😊";
 }
-#datatricsID-dont-like + label::before{
+#dont-like + label::before{
     content: "🙁";
 }
-#datatricsID-another + label::before{
+#another + label::before{
     content: "🙂";
 }
-#datatricsID-another:checked + label::before{
+#another:checked + label::before{
     content: "🙂";
 }
 
@@ -142,7 +142,7 @@ input[type="radio"]:checked + label::before,label::after{
 
 @media screen and (max-width: 500px){
 
-    .datatrics-popup-content{
+    .popup-content{
         width: 90%;
         height: 80%;
     }
@@ -155,11 +155,11 @@ input[type="radio"]:checked + label::before,label::after{
 }
 
 @media screen and (min-width:501px) and (max-width:542px){
-    .datatrics-popup-content{
+    .popup-content{
         width:65%;
         height: 90%;
     }
-    .datatrics-radio textarea{
+    .radio textarea{
         margin-top:3%;
     }
     input[type="radio"]:checked + label::after{
@@ -169,11 +169,11 @@ input[type="radio"]:checked + label::before,label::after{
     }
 }
 @media screen and (min-width:542px) and (max-width:619px){
-    .datatrics-popup-content{
+    .popup-content{
         width:65%;
         height: 80%;
     }
-    .datatrics-radio textarea{
+    .radio textarea{
         margin-top:3%;
     }
     input[type="radio"]:checked + label::after{
@@ -183,11 +183,11 @@ input[type="radio"]:checked + label::before,label::after{
     }
 }
 @media screen and (min-width:619px) and (max-width:800px){
-    .datatrics-popup-content{
+    .popup-content{
         width:55%;
         height: 75%;
     }
-    .datatrics-radio textarea{
+    .radio textarea{
         margin-top:4%;
     }
     input[type="radio"]:checked + label::after{
@@ -198,12 +198,12 @@ input[type="radio"]:checked + label::before,label::after{
 }
 
 @media screen and (min-width: 801px) and (max-width: 1024px){
-    .datatrics-popup-content{
+    .popup-content{
         max-width: 420px;
         width:48%;
         height: 70%;
     }
-    .datatrics-radio textarea{
+    .radio textarea{
         margin-top:5%;
     }
     input[type="radio"]:checked + label::after{
@@ -213,11 +213,11 @@ input[type="radio"]:checked + label::before,label::after{
     }
 }
 @media screen and (min-width: 1024px){
-    .datatrics-popup-content{
+    .popup-content{
         width:48%;
         height: 70%;
     }
-    .datatrics-radio textarea{
+    .radio textarea{
         margin-top:5%;
         margin-bottom: 2%;
     }

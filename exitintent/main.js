@@ -7,12 +7,12 @@
 
 function closeEvent(){
 
-    let close = document.querySelector('#datatrics-close');
+    let close = document.querySelector('#close');
     close.addEventListener("click", ()=>{
 
         hidePopUp();
         setTimeout(() => {
-            document.querySelector("#datatrics-popup").style.display="none";
+            document.querySelector("#popup").style.display="none";
         }, 500);        
     })
 }
@@ -23,14 +23,14 @@ function windowLeave(){
             showPopUp();
             
             setTimeout(() => {
-                document.querySelector("#datatrics-popup").style.display="flex";
+                document.querySelector("#popup").style.display="flex";
             }, 500);     
             
         }
     } , false) ;
 }
 function showPopUp(){
-    let popupCont = document.querySelector(".datatrics-popup-content");
+    let popupCont = document.querySelector(".popup-content");
     removeClass(popupCont,'animate__animated')
     removeClass(popupCont,'animate__fadeOutRight')
 
@@ -38,7 +38,7 @@ function showPopUp(){
     addClass(popupCont,"animate__fadeInRight");
 }
 function hidePopUp(){
-    let popupCont = document.querySelector(".datatrics-popup-content");
+    let popupCont = document.querySelector(".popup-content");
 
     removeClass(popupCont,"animate__fadeInRight");
     removeClass(popupCont,'animate__animated');
@@ -62,7 +62,7 @@ function toggleRadioGroup(){
     //Establecemos que no hay items chequeados
     let check = null;
     //Iteramos los rbuttons
-    document.querySelectorAll('.datatrics-radio .dt-experience').forEach((radio) =>{
+    document.querySelectorAll('.radio .experience').forEach((radio) =>{
         radio.addEventListener("click", (ev)=>{
 
             //Si habian items chequeeados 
@@ -95,14 +95,14 @@ function toggleSingleRadio(){
     //Genero el boton y el textarea.
     let textarea = textareaGenerate();
     let button = buttonGenerate();
-    let popupCont = document.querySelector(".datatrics-popup-content");
-    let radios = document.querySelector(".datatrics-radio");
+    let popupCont = document.querySelector(".popup-content");
+    let radios = document.querySelector(".radio");
 
     //Como no hay items seleccionados, lo ponemos en null.
     let extraCheck = null;
 
     //Agregamos el evento click al boton "deje un comentario"
-    document.querySelector(".datatrics-radio #datatricsID-another").addEventListener("click",(ev)=>{
+    document.querySelector(".radio #another").addEventListener("click",(ev)=>{
 
         //Si hay un item seleccionado
         if(extraCheck){
@@ -129,7 +129,7 @@ function toggleSingleRadio(){
 function textareaGenerate(){
     let textarea = document.createElement("textarea");
     textarea.rows = 6;
-    textarea.classList.add("datatrics-textarea");
+    textarea.classList.add("textarea");
     return textarea;
 }
 //Funcion para generar un boton y agregarle estilo
@@ -137,7 +137,7 @@ function buttonGenerate(){
     let button = document.createElement('button');
     button.innerHTML = "Enviar";
     button.type = 'submit';
-    button.classList.add("datatrics-btn-enviar");
+    button.classList.add("btn-enviar");
     return button;
 }
 
