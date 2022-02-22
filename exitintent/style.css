@@ -18,7 +18,7 @@ body,html{
 .popup{
     position: relative;
     height: 100vh;
-    display: none;
+    display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 1em;
@@ -139,6 +139,16 @@ input[type="radio"]:checked + label::before,label::after{
 .space{
     height: 600px;
 }
+
+
+
+
+/* DIBUJO DEL FONDO */
+/*#DBC346*/
+
+
+
+/* FIN DIBUJO DEL FONDO */
 
 @media screen and (max-width: 500px){
 

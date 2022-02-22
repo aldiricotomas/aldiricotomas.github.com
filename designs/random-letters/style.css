@@ -1,15 +1,70 @@
-body{
+/* body{
     background-color: black;
-    color:/* rgba(255,255,255,.1); */black;
+    color:rgba(255,255,255,.1); black;
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
     font-family: Roboto, Helvetica, Arial;
 }
+  */#datatrics-box-container #datatrics-box{
+    border-radius: 12px;
+}
+#datatrics-box-container .datatrics-box-html{
+    height:250px;
+    border-radius: 12px;
+}
 
+
+#popup.popup-content{
+    position: fixed;
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 1.5em;
+    font-family: 'Roboto', Helvetica, Arial !important;
+    margin:auto;
+    background-color: #F2CA5A;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,.5);
+    
+    border:none;
+    border-radius: 12px;
+    color: white;
+    
+}
+
+#popup .dont-leave-title{
+    text-align: center;
+    font-size:1.44em;
+    margin-bottom: 0.3em;
+}
+#popup .dont-leave-persuation{
+    text-align: center;
+}
+#popup .dont-leave-your-code{
+    text-align:center;
+    margin-top:2em;
+    display:none;
+}
+#popup .dont-leave-button{
+    display:inline-block;
+    margin:auto;
+    padding:0.3em 1em;
+    text-align:center;
+    border-radius: 20px;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,.5);
+    font-size:1.8em;
+    cursor: pointer;
+}
+
+.zoomInSlow{
+    animation: zoomIn 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4,0.0,0.2,1);
+}
 .zoomIn, .zoomOut{
-    animation: zoomIn 3s;
+    animation: zoomIn 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4,0.0,0.2,1);
 }
