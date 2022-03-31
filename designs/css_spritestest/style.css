@@ -1,4 +1,4 @@
-body{
+/* body{
     height: 100vh;
     background-color: black;
     display: flex;
@@ -25,4 +25,8 @@ body{
     to{
         background-position: right;
     }
+} */
+svg{
+    max-height:80px;
+    fill: blue;
 }
